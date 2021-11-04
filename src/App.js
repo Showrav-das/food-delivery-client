@@ -51,11 +51,12 @@ function App() {
             </Route>
           <Route path="/login">
             <Login/>
+            </Route>
+            <Route path="*">
+            <Notfound/>
           </Route>
           </Switch>
-          <Route path="*">
-              <Notfound/>
-          </Route>
+          
         </Router>
         <Footer/>
       </AuthProvides>
