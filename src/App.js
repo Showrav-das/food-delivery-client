@@ -14,6 +14,7 @@ import ManageOrder from './Components/Home/ManageOrder/ManageOrder';
 import Footer from './Components/Home/Footer/Footer';
 import About from './Components/Home/About/About';
 import Contact from './Components/Home/Contact/Contact';
+import Notfound from './Components/Home/Home/Notfound/Notfound';
 function App() {
   return (
     <div className="App">
@@ -51,7 +52,10 @@ function App() {
           <Route path="/login">
             <Login/>
           </Route>
-        </Switch>
+          </Switch>
+          <Route path="*">
+              <Notfound/>
+          </Route>
         </Router>
         <Footer/>
       </AuthProvides>
