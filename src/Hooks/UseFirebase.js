@@ -37,7 +37,6 @@ const UseFirebase = () => {
             .finally(() => setIsLoad(false));
     }
 
-   
     return {
         users,
         signInGoogle,logOut,isLoad

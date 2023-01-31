@@ -5,17 +5,19 @@ import UseAuth from '../../Hooks/UseAuth';
 // import UseFirebase from '../../Hooks/UseFirebase';
 
 const Details = () => {
-    const { _id } = useParams();
-    // console.log(id);
+    const { id } = useParams();
+    console.log(id);
     const { users } = UseAuth();
     const [customer, setCustomer] = useState({});
     const [details, setDetails] = useState({});
     useEffect(() => {
-        // const url = `https://vast-scrubland-70609.herokuapp.com/allfoods/${_id}`;
-        fetch("https://vast-scrubland-70609.herokuapp.com/allfoods")
+        const url = `http://localhost:4000/allfoods/${id}`;
+        console.log(url);
+
+        fetch(url)
             .then(res => res.json())
             .then(data => {
-         const foundTrainer = data.find(singleTrainer=> singleTrainer.id ==_id);
+         const foundTrainer = data.find(singleTrainer=> singleTrainer.id ==id);
                 setDetails(foundTrainer)
                 console.log(foundTrainer);
                 // console.log(singleTrainer);
@@ -48,6 +50,7 @@ const Details = () => {
     <Card.Title>Food Name: {details?.name} </Card.Title>
     <Card.Text>
      {details?.details}
+     {details.id}
     </Card.Text>
     <Button variant="primary">Add to Cart</Button>
   </Card.Body>
