@@ -4,7 +4,7 @@ import Service from '../Home/Service/Service';
 const Services = () => {
     const [foods, setFoods] = useState([]);
     useEffect((data) => {
-        fetch('http://localhost:4000/allfoods')
+        fetch('https://food-server-sl4s.onrender.com/allfoods')
             .then(res => res.json())
             .then(data => {
                 setFoods(data);

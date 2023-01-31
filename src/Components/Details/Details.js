@@ -11,7 +11,7 @@ const Details = () => {
     const [customer, setCustomer] = useState({});
     const [details, setDetails] = useState({});
     useEffect(() => {
-        const url = `http://localhost:4000/allfoods/${id}`;
+        const url = `https://food-server-sl4s.onrender.com/allfoods/${id}`;
         console.log(url);
 
         fetch(url)
