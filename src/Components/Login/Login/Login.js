@@ -12,7 +12,7 @@ const Login = () => {
     const { signInGoogle, users } = UseAuth();
     return (  
         <div>
-            <h2>Please login.</h2> <br />
+            <h2>Please login.</h2> <br/>
             <Button className="ps-5 pe-5" onClick={ signInGoogle}>Google</Button>
         </div>
     );
